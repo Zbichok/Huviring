@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f5ccec08223244a28f6d0dbeb31dd281" Name="Diagram1" ZoomLevel="73" >
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.huviringid" Width="1.5" PointX="1.375" PointY="6.375" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.Huviring_juhendaja" Width="1.75" PointX="4.25" PointY="9.375" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.juhendaja" Width="1.5" PointX="4.5" PointY="6.5" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.huviringidHuviring_juhendaja" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.juhendajaHuviring_juhendaja" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.Toimusaeg" Width="1.5" PointX="7.25" PointY="0.5" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.Ruum" Width="1.5" PointX="7.5" PointY="4" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.Ruhm" Width="1.5" PointX="4.875" PointY="0.5" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.Uritus" Width="1.5" PointX="10" PointY="6" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.RuumToimusaeg" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.RuhmToimusaeg" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.huviringidRuhm" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.Registreerimine" Width="1.5" PointX="3.75" PointY="3.625" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.huviringidRegistreerimine" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.UritusHuviring" Width="1.5" PointX="7.125" PointY="6.5" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.UritusUritusHuviring" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.huviringidUritusHuviring" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.Osalemine" Width="1.5" PointX="3.25" PointY="1.125" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.Osaleja" Width="1.5" PointX="0.625" PointY="3.625" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.OsalejaRegistreerimine" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.RegistreerimineOsalemine" />
+        <EntityTypeShape EntityType="Huvikeskus_x0020_Model.Arve" Width="1.5" PointX="2.25" PointY="10.5" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.RegistreerimineArve" />
+        <AssociationConnector Association="Huvikeskus_x0020_Model.huviringidArve" ></AssociationConnector>
+        <AssociationConnector Association="Huvikeskus_x0020_Model.RuumRegistreerimine" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

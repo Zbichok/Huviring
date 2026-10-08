@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Huvikeskus_x0020_Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Huvikeskus_x0020_ModelStoreContainer">
+    <EntitySet Name="huviringidSet" EntityType="Huvikeskus_x0020_Model.Store.huviringidSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Huviring_juhendajaSet" EntityType="Huvikeskus_x0020_Model.Store.Huviring_juhendajaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="juhendajaSet" EntityType="Huvikeskus_x0020_Model.Store.juhendajaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ToimusaegSet" EntityType="Huvikeskus_x0020_Model.Store.ToimusaegSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RuumSet" EntityType="Huvikeskus_x0020_Model.Store.RuumSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RuhmSet" EntityType="Huvikeskus_x0020_Model.Store.RuhmSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UritusSet" EntityType="Huvikeskus_x0020_Model.Store.UritusSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RegistreerimineSet" EntityType="Huvikeskus_x0020_Model.Store.RegistreerimineSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UritusHuviringSet" EntityType="Huvikeskus_x0020_Model.Store.UritusHuviringSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OsalemineSet" EntityType="Huvikeskus_x0020_Model.Store.OsalemineSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OsalejaSet" EntityType="Huvikeskus_x0020_Model.Store.OsalejaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArveSet" EntityType="Huvikeskus_x0020_Model.Store.ArveSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="huviringidHuviring_juhendaja" Association="Huvikeskus_x0020_Model.Store.huviringidHuviring_juhendaja">
+      <End Role="huviringid" EntitySet="huviringidSet" />
+      <End Role="Huviring_juhendaja" EntitySet="Huviring_juhendajaSet" />
+    </AssociationSet>
+    <AssociationSet Name="juhendajaHuviring_juhendaja" Association="Huvikeskus_x0020_Model.Store.juhendajaHuviring_juhendaja">
+      <End Role="juhendaja" EntitySet="juhendajaSet" />
+      <End Role="Huviring_juhendaja" EntitySet="Huviring_juhendajaSet" />
+    </AssociationSet>
+    <AssociationSet Name="RuumToimusaeg" Association="Huvikeskus_x0020_Model.Store.RuumToimusaeg">
+      <End Role="Ruum" EntitySet="RuumSet" />
+      <End Role="Toimusaeg" EntitySet="ToimusaegSet" />
+    </AssociationSet>
+    <AssociationSet Name="RuhmToimusaeg" Association="Huvikeskus_x0020_Model.Store.RuhmToimusaeg">
+      <End Role="Ruhm" EntitySet="RuhmSet" />
+      <End Role="Toimusaeg" EntitySet="ToimusaegSet" />
+    </AssociationSet>
+    <AssociationSet Name="huviringidRuhm" Association="Huvikeskus_x0020_Model.Store.huviringidRuhm">
+      <End Role="huviringid" EntitySet="huviringidSet" />
+      <End Role="Ruhm" EntitySet="RuhmSet" />
+    </AssociationSet>
+    <AssociationSet Name="huviringidRegistreerimine" Association="Huvikeskus_x0020_Model.Store.huviringidRegistreerimine">
+      <End Role="huviringid" EntitySet="huviringidSet" />
+      <End Role="Registreerimine" EntitySet="RegistreerimineSet" />
+    </AssociationSet>
+    <AssociationSet Name="RuhmRegistreerimine" Association="Huvikeskus_x0020_Model.Store.RuhmRegistreerimine">
+      <End Role="Ruhm" EntitySet="RuhmSet" />
+      <End Role="Registreerimine" EntitySet="RegistreerimineSet" />
+    </AssociationSet>
+    <AssociationSet Name="UritusUritusHuviring" Association="Huvikeskus_x0020_Model.Store.UritusUritusHuviring">
+      <End Role="Uritus" EntitySet="UritusSet" />
+      <End Role="UritusHuviring" EntitySet="UritusHuviringSet" />
+    </AssociationSet>
+    <AssociationSet Name="huviringidUritusHuviring" Association="Huvikeskus_x0020_Model.Store.huviringidUritusHuviring">
+      <End Role="huviringid" EntitySet="huviringidSet" />
+      <End Role="UritusHuviring" EntitySet="UritusHuviringSet" />
+    </AssociationSet>
+    <AssociationSet Name="OsalejaRegistreerimine" Association="Huvikeskus_x0020_Model.Store.OsalejaRegistreerimine">
+      <End Role="Osaleja" EntitySet="OsalejaSet" />
+      <End Role="Registreerimine" EntitySet="RegistreerimineSet" />
+    </AssociationSet>
+    <AssociationSet Name="RegistreerimineOsalemine" Association="Huvikeskus_x0020_Model.Store.RegistreerimineOsalemine">
+      <End Role="Registreerimine" EntitySet="RegistreerimineSet" />
+      <End Role="Osalemine" EntitySet="OsalemineSet" />
+    </AssociationSet>
+    <AssociationSet Name="RegistreerimineArve" Association="Huvikeskus_x0020_Model.Store.RegistreerimineArve">
+      <End Role="Registreerimine" EntitySet="RegistreerimineSet" />
+      <End Role="Arve" EntitySet="ArveSet" />
+    </AssociationSet>
+    <AssociationSet Name="huviringidArve" Association="Huvikeskus_x0020_Model.Store.huviringidArve">
+      <End Role="huviringid" EntitySet="huviringidSet" />
+      <End Role="Arve" EntitySet="ArveSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="huviringidSet">
+    <Key>
+      <PropertyRef Name="huviringid_id" />
+    </Key>
+    <Property Name="huviringid_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nimetus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Huviring_juhendajaSet">
+    <Key>
+      <PropertyRef Name="huviringid_id" />
+    </Key>
+    <Property Name="huviringid_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="juhendaja_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="huviringid_huviringid_id" Type="int" Nullable="false" />
+    <Property Name="juhendaja_juhendaja_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="juhendajaSet">
+    <Key>
+      <PropertyRef Name="juhendaja_id" />
+    </Key>
+    <Property Name="juhendaja_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nimi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tel" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ToimusaegSet">
+    <Key>
+      <PropertyRef Name="toimusaeg_id" />
+    </Key>
+    <Property Name="toimusaeg_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="huviringid_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="paev" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="alguspaev" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="loppaeg" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ruum_RuumID" Type="int" Nullable="false" />
+    <Property Name="Ruhm_RuhmID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RuumSet">
+    <Key>
+      <PropertyRef Name="RuumID" />
+    </Key>
+    <Property Name="RuumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nimetus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KohtadeArv" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RuhmSet">
+    <Key>
+      <PropertyRef Name="RuhmID" />
+    </Key>
+    <Property Name="RuhmID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nimi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Vanus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Maks_Osalejate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="huviringid_huviringid_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UritusSet">
+    <Key>
+      <PropertyRef Name="UritusID" />
+    </Key>
+    <Property Name="UritusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kirjeldus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kuupaev" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ToimusAeg" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nimetus" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegistreerimineSet">
+    <Key>
+      <PropertyRef Name="RegistreerimineID" />
+    </Key>
+    <Property Name="RegistreerimineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Alguskuupaev" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LoppPaev" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="huviringid_huviringid_id" Type="int" Nullable="false" />
+    <Property Name="Ruhm_RuhmID" Type="int" Nullable="false" />
+    <Property Name="Osaleja_OsalejaID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UritusHuviringSet">
+    <Key>
+      <PropertyRef Name="Uritus" />
+    </Key>
+    <Property Name="Uritus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Uritus1_UritusID" Type="int" Nullable="false" />
+    <Property Name="huviringid_huviringid_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OsalemineSet">
+    <Key>
+      <PropertyRef Name="OsalemineID" />
+    </Key>
+    <Property Name="OsalemineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToimusAeg" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kuupaev" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kohal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Registreerimine_RegistreerimineID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OsalejaSet">
+    <Key>
+      <PropertyRef Name="OsalejaID" />
+    </Key>
+    <Property Name="OsalejaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nimi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Epost" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArveSet">
+    <Key>
+      <PropertyRef Name="ArveID" />
+    </Key>
+    <Property Name="ArveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Summa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kuupaev" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MakseStatus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Registreerimine_RegistreerimineID" Type="int" Nullable="false" />
+    <Property Name="huviringid_huviringid_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="huviringidHuviring_juhendaja">
+    <End Role="huviringid" Type="Huvikeskus_x0020_Model.Store.huviringidSet" Multiplicity="1" />
+    <End Role="Huviring_juhendaja" Type="Huvikeskus_x0020_Model.Store.Huviring_juhendajaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="huviringid">
+        <PropertyRef Name="huviringid_id" />
+      </Principal>
+      <Dependent Role="Huviring_juhendaja">
+        <PropertyRef Name="huviringid_huviringid_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="juhendajaHuviring_juhendaja">
+    <End Role="juhendaja" Type="Huvikeskus_x0020_Model.Store.juhendajaSet" Multiplicity="1" />
+    <End Role="Huviring_juhendaja" Type="Huvikeskus_x0020_Model.Store.Huviring_juhendajaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="juhendaja">
+        <PropertyRef Name="juhendaja_id" />
+      </Principal>
+      <Dependent Role="Huviring_juhendaja">
+        <PropertyRef Name="juhendaja_juhendaja_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RuumToimusaeg">
+    <End Role="Ruum" Type="Huvikeskus_x0020_Model.Store.RuumSet" Multiplicity="1" />
+    <End Role="Toimusaeg" Type="Huvikeskus_x0020_Model.Store.ToimusaegSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ruum">
+        <PropertyRef Name="RuumID" />
+      </Principal>
+      <Dependent Role="Toimusaeg">
+        <PropertyRef Name="Ruum_RuumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RuhmToimusaeg">
+    <End Role="Ruhm" Type="Huvikeskus_x0020_Model.Store.RuhmSet" Multiplicity="1" />
+    <End Role="Toimusaeg" Type="Huvikeskus_x0020_Model.Store.ToimusaegSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ruhm">
+        <PropertyRef Name="RuhmID" />
+      </Principal>
+      <Dependent Role="Toimusaeg">
+        <PropertyRef Name="Ruhm_RuhmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="huviringidRuhm">
+    <End Role="huviringid" Type="Huvikeskus_x0020_Model.Store.huviringidSet" Multiplicity="1" />
+    <End Role="Ruhm" Type="Huvikeskus_x0020_Model.Store.RuhmSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="huviringid">
+        <PropertyRef Name="huviringid_id" />
+      </Principal>
+      <Dependent Role="Ruhm">
+        <PropertyRef Name="huviringid_huviringid_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="huviringidRegistreerimine">
+    <End Role="huviringid" Type="Huvikeskus_x0020_Model.Store.huviringidSet" Multiplicity="1" />
+    <End Role="Registreerimine" Type="Huvikeskus_x0020_Model.Store.RegistreerimineSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="huviringid">
+        <PropertyRef Name="huviringid_id" />
+      </Principal>
+      <Dependent Role="Registreerimine">
+        <PropertyRef Name="huviringid_huviringid_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RuhmRegistreerimine">
+    <End Role="Ruhm" Type="Huvikeskus_x0020_Model.Store.RuhmSet" Multiplicity="1" />
+    <End Role="Registreerimine" Type="Huvikeskus_x0020_Model.Store.RegistreerimineSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ruhm">
+        <PropertyRef Name="RuhmID" />
+      </Principal>
+      <Dependent Role="Registreerimine">
+        <PropertyRef Name="Ruhm_RuhmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UritusUritusHuviring">
+    <End Role="Uritus" Type="Huvikeskus_x0020_Model.Store.UritusSet" Multiplicity="1" />
+    <End Role="UritusHuviring" Type="Huvikeskus_x0020_Model.Store.UritusHuviringSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uritus">
+        <PropertyRef Name="UritusID" />
+      </Principal>
+      <Dependent Role="UritusHuviring">
+        <PropertyRef Name="Uritus1_UritusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="huviringidUritusHuviring">
+    <End Role="huviringid" Type="Huvikeskus_x0020_Model.Store.huviringidSet" Multiplicity="1" />
+    <End Role="UritusHuviring" Type="Huvikeskus_x0020_Model.Store.UritusHuviringSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="huviringid">
+        <PropertyRef Name="huviringid_id" />
+      </Principal>
+      <Dependent Role="UritusHuviring">
+        <PropertyRef Name="huviringid_huviringid_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OsalejaRegistreerimine">
+    <End Role="Osaleja" Type="Huvikeskus_x0020_Model.Store.OsalejaSet" Multiplicity="1" />
+    <End Role="Registreerimine" Type="Huvikeskus_x0020_Model.Store.RegistreerimineSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osaleja">
+        <PropertyRef Name="OsalejaID" />
+      </Principal>
+      <Dependent Role="Registreerimine">
+        <PropertyRef Name="Osaleja_OsalejaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RegistreerimineOsalemine">
+    <End Role="Registreerimine" Type="Huvikeskus_x0020_Model.Store.RegistreerimineSet" Multiplicity="1" />
+    <End Role="Osalemine" Type="Huvikeskus_x0020_Model.Store.OsalemineSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Registreerimine">
+        <PropertyRef Name="RegistreerimineID" />
+      </Principal>
+      <Dependent Role="Osalemine">
+        <PropertyRef Name="Registreerimine_RegistreerimineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RegistreerimineArve">
+    <End Role="Registreerimine" Type="Huvikeskus_x0020_Model.Store.RegistreerimineSet" Multiplicity="1" />
+    <End Role="Arve" Type="Huvikeskus_x0020_Model.Store.ArveSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Registreerimine">
+        <PropertyRef Name="RegistreerimineID" />
+      </Principal>
+      <Dependent Role="Arve">
+        <PropertyRef Name="Registreerimine_RegistreerimineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="huviringidArve">
+    <End Role="huviringid" Type="Huvikeskus_x0020_Model.Store.huviringidSet" Multiplicity="1" />
+    <End Role="Arve" Type="Huvikeskus_x0020_Model.Store.ArveSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="huviringid">
+        <PropertyRef Name="huviringid_id" />
+      </Principal>
+      <Dependent Role="Arve">
+        <PropertyRef Name="huviringid_huviringid_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Huvikeskus_x0020_Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Huvikeskus_x0020_ModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="huviringidSet" EntityType="Huvikeskus_x0020_Model.huviringid" />
+          <EntitySet Name="Huviring_juhendajaSet" EntityType="Huvikeskus_x0020_Model.Huviring_juhendaja" />
+          <EntitySet Name="juhendajaSet" EntityType="Huvikeskus_x0020_Model.juhendaja" />
+          <AssociationSet Name="huviringidHuviring_juhendaja" Association="Huvikeskus_x0020_Model.huviringidHuviring_juhendaja">
+            <End Role="huviringid" EntitySet="huviringidSet" />
+            <End Role="Huviring_juhendaja" EntitySet="Huviring_juhendajaSet" />
+          </AssociationSet>
+          <AssociationSet Name="juhendajaHuviring_juhendaja" Association="Huvikeskus_x0020_Model.juhendajaHuviring_juhendaja">
+            <End Role="juhendaja" EntitySet="juhendajaSet" />
+            <End Role="Huviring_juhendaja" EntitySet="Huviring_juhendajaSet" />
+          </AssociationSet>
+          <EntitySet Name="ToimusaegSet" EntityType="Huvikeskus_x0020_Model.Toimusaeg" />
+          <EntitySet Name="RuumSet" EntityType="Huvikeskus_x0020_Model.Ruum" />
+          <EntitySet Name="RuhmSet" EntityType="Huvikeskus_x0020_Model.Ruhm" />
+          <EntitySet Name="UritusSet" EntityType="Huvikeskus_x0020_Model.Uritus" />
+          <AssociationSet Name="RuumToimusaeg" Association="Huvikeskus_x0020_Model.RuumToimusaeg">
+            <End Role="Ruum" EntitySet="RuumSet" />
+            <End Role="Toimusaeg" EntitySet="ToimusaegSet" />
+          </AssociationSet>
+          <AssociationSet Name="RuhmToimusaeg" Association="Huvikeskus_x0020_Model.RuhmToimusaeg">
+            <End Role="Ruhm" EntitySet="RuhmSet" />
+            <End Role="Toimusaeg" EntitySet="ToimusaegSet" />
+          </AssociationSet>
+          <AssociationSet Name="huviringidRuhm" Association="Huvikeskus_x0020_Model.huviringidRuhm">
+            <End Role="huviringid" EntitySet="huviringidSet" />
+            <End Role="Ruhm" EntitySet="RuhmSet" />
+          </AssociationSet>
+          <EntitySet Name="RegistreerimineSet" EntityType="Huvikeskus_x0020_Model.Registreerimine" />
+          <AssociationSet Name="huviringidRegistreerimine" Association="Huvikeskus_x0020_Model.huviringidRegistreerimine">
+            <End Role="huviringid" EntitySet="huviringidSet" />
+            <End Role="Registreerimine" EntitySet="RegistreerimineSet" />
+          </AssociationSet>
+          <EntitySet Name="UritusHuviringSet" EntityType="Huvikeskus_x0020_Model.UritusHuviring" />
+          <AssociationSet Name="UritusUritusHuviring" Association="Huvikeskus_x0020_Model.UritusUritusHuviring">
+            <End Role="Uritus" EntitySet="UritusSet" />
+            <End Role="UritusHuviring" EntitySet="UritusHuviringSet" />
+          </AssociationSet>
+          <AssociationSet Name="huviringidUritusHuviring" Association="Huvikeskus_x0020_Model.huviringidUritusHuviring">
+            <End Role="huviringid" EntitySet="huviringidSet" />
+            <End Role="UritusHuviring" EntitySet="UritusHuviringSet" />
+          </AssociationSet>
+          <EntitySet Name="OsalemineSet" EntityType="Huvikeskus_x0020_Model.Osalemine" />
+          <EntitySet Name="OsalejaSet" EntityType="Huvikeskus_x0020_Model.Osaleja" />
+          <AssociationSet Name="OsalejaRegistreerimine" Association="Huvikeskus_x0020_Model.OsalejaRegistreerimine">
+            <End Role="Osaleja" EntitySet="OsalejaSet" />
+            <End Role="Registreerimine" EntitySet="RegistreerimineSet" />
+          </AssociationSet>
+          <AssociationSet Name="RegistreerimineOsalemine" Association="Huvikeskus_x0020_Model.RegistreerimineOsalemine">
+            <End Role="Registreerimine" EntitySet="RegistreerimineSet" />
+            <End Role="Osalemine" EntitySet="OsalemineSet" />
+          </AssociationSet>
+          <EntitySet Name="ArveSet" EntityType="Huvikeskus_x0020_Model.Arve" />
+          <AssociationSet Name="RegistreerimineArve" Association="Huvikeskus_x0020_Model.RegistreerimineArve">
+            <End Role="Registreerimine" EntitySet="RegistreerimineSet" />
+            <End Role="Arve" EntitySet="ArveSet" />
+          </AssociationSet>
+          <AssociationSet Name="huviringidArve" Association="Huvikeskus_x0020_Model.huviringidArve">
+            <End Role="huviringid" EntitySet="huviringidSet" />
+            <End Role="Arve" EntitySet="ArveSet" />
+          </AssociationSet>
+          <AssociationSet Name="RuumRegistreerimine" Association="Huvikeskus_x0020_Model.RuumRegistreerimine">
+            <End Role="Ruum" EntitySet="RuumSet" />
+            <End Role="Registreerimine" EntitySet="RegistreerimineSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="huviringid">
+          <Key>
+            <PropertyRef Name="huviringid_id" />
+          </Key>
+          <Property Name="huviringid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nimetus" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Huviring_juhendaja" Relationship="Huvikeskus_x0020_Model.huviringidHuviring_juhendaja" FromRole="huviringid" ToRole="Huviring_juhendaja" />
+          <NavigationProperty Name="Ruhm" Relationship="Huvikeskus_x0020_Model.huviringidRuhm" FromRole="huviringid" ToRole="Ruhm" />
+          <NavigationProperty Name="Registreerimine" Relationship="Huvikeskus_x0020_Model.huviringidRegistreerimine" FromRole="huviringid" ToRole="Registreerimine" />
+          <NavigationProperty Name="UritusHuviring" Relationship="Huvikeskus_x0020_Model.huviringidUritusHuviring" FromRole="huviringid" ToRole="UritusHuviring" />
+          <NavigationProperty Name="Arve" Relationship="Huvikeskus_x0020_Model.huviringidArve" FromRole="huviringid" ToRole="Arve" />
+        </EntityType>
+        <EntityType Name="Huviring_juhendaja">
+          <Key>
+            <PropertyRef Name="huviringid_id" />
+          </Key>
+          <Property Name="huviringid_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="juhendaja_id" Type="String" Nullable="false" />
+          <NavigationProperty Name="huviringid" Relationship="Huvikeskus_x0020_Model.huviringidHuviring_juhendaja" FromRole="Huviring_juhendaja" ToRole="huviringid" />
+          <NavigationProperty Name="juhendaja" Relationship="Huvikeskus_x0020_Model.juhendajaHuviring_juhendaja" FromRole="Huviring_juhendaja" ToRole="juhendaja" />
+        </EntityType>
+        <EntityType Name="juhendaja">
+          <Key>
+            <PropertyRef Name="juhendaja_id" />
+          </Key>
+          <Property Name="juhendaja_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nimi" Type="String" Nullable="false" />
+          <Property Name="tel" Type="String" Nullable="false" />
+          <NavigationProperty Name="Huviring_juhendaja" Relationship="Huvikeskus_x0020_Model.juhendajaHuviring_juhendaja" FromRole="juhendaja" ToRole="Huviring_juhendaja" />
+        </EntityType>
+        <Association Name="huviringidHuviring_juhendaja">
+          <End Type="Huvikeskus_x0020_Model.huviringid" Role="huviringid" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Huviring_juhendaja" Role="Huviring_juhendaja" Multiplicity="*" />
+        </Association>
+        <Association Name="juhendajaHuviring_juhendaja">
+          <End Type="Huvikeskus_x0020_Model.juhendaja" Role="juhendaja" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Huviring_juhendaja" Role="Huviring_juhendaja" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Toimusaeg">
+          <Key>
+            <PropertyRef Name="toimusaeg_id" />
+          </Key>
+          <Property Name="toimusaeg_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="huviringid_id" Type="String" Nullable="false" />
+          <Property Name="paev" Type="String" Nullable="false" />
+          <Property Name="alguspaev" Type="String" Nullable="false" />
+          <Property Name="loppaeg" Type="String" Nullable="false" />
+          <NavigationProperty Name="Ruum" Relationship="Huvikeskus_x0020_Model.RuumToimusaeg" FromRole="Toimusaeg" ToRole="Ruum" />
+          <NavigationProperty Name="Ruhm" Relationship="Huvikeskus_x0020_Model.RuhmToimusaeg" FromRole="Toimusaeg" ToRole="Ruhm" />
+        </EntityType>
+        <EntityType Name="Ruum">
+          <Key>
+            <PropertyRef Name="RuumID" />
+          </Key>
+          <Property Name="RuumID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" Nullable="false" />
+          <Property Name="Nimetus" Type="String" Nullable="false" />
+          <Property Name="KohtadeArv" Type="String" Nullable="false" />
+          <NavigationProperty Name="Toimusaeg" Relationship="Huvikeskus_x0020_Model.RuumToimusaeg" FromRole="Ruum" ToRole="Toimusaeg" />
+          <NavigationProperty Name="Registreerimine" Relationship="Huvikeskus_x0020_Model.RuumRegistreerimine" FromRole="Ruum" ToRole="Registreerimine" />
+        </EntityType>
+        <EntityType Name="Ruhm">
+          <Key>
+            <PropertyRef Name="RuhmID" />
+          </Key>
+          <Property Name="RuhmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nimi" Type="String" Nullable="false" />
+          <Property Name="Vanus" Type="String" Nullable="false" />
+          <Property Name="Maks_Osalejate" Type="String" Nullable="false" />
+          <NavigationProperty Name="Toimusaeg" Relationship="Huvikeskus_x0020_Model.RuhmToimusaeg" FromRole="Ruhm" ToRole="Toimusaeg" />
+          <NavigationProperty Name="huviringid" Relationship="Huvikeskus_x0020_Model.huviringidRuhm" FromRole="Ruhm" ToRole="huviringid" />
+        </EntityType>
+        <EntityType Name="Uritus">
+          <Key>
+            <PropertyRef Name="UritusID" />
+          </Key>
+          <Property Name="UritusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kirjeldus" Type="String" Nullable="false" />
+          <Property Name="Kuupaev" Type="String" Nullable="false" />
+          <Property Name="ToimusAeg" Type="String" Nullable="false" />
+          <Property Name="Nimetus" Type="String" Nullable="false" />
+          <NavigationProperty Name="UritusHuviring" Relationship="Huvikeskus_x0020_Model.UritusUritusHuviring" FromRole="Uritus" ToRole="UritusHuviring" />
+        </EntityType>
+        <Association Name="RuumToimusaeg">
+          <End Type="Huvikeskus_x0020_Model.Ruum" Role="Ruum" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Toimusaeg" Role="Toimusaeg" Multiplicity="*" />
+        </Association>
+        <Association Name="RuhmToimusaeg">
+          <End Type="Huvikeskus_x0020_Model.Ruhm" Role="Ruhm" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Toimusaeg" Role="Toimusaeg" Multiplicity="*" />
+        </Association>
+        <Association Name="huviringidRuhm">
+          <End Type="Huvikeskus_x0020_Model.huviringid" Role="huviringid" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Ruhm" Role="Ruhm" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Registreerimine">
+          <Key>
+            <PropertyRef Name="RegistreerimineID" />
+          </Key>
+          <Property Name="RegistreerimineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Alguskuupaev" Type="String" Nullable="false" />
+          <Property Name="LoppPaev" Type="String" Nullable="false" />
+          <NavigationProperty Name="huviringid" Relationship="Huvikeskus_x0020_Model.huviringidRegistreerimine" FromRole="Registreerimine" ToRole="huviringid" />
+          <NavigationProperty Name="Osaleja" Relationship="Huvikeskus_x0020_Model.OsalejaRegistreerimine" FromRole="Registreerimine" ToRole="Osaleja" />
+          <NavigationProperty Name="Osalemine" Relationship="Huvikeskus_x0020_Model.RegistreerimineOsalemine" FromRole="Registreerimine" ToRole="Osalemine" />
+          <NavigationProperty Name="Arve" Relationship="Huvikeskus_x0020_Model.RegistreerimineArve" FromRole="Registreerimine" ToRole="Arve" />
+          <NavigationProperty Name="Ruum" Relationship="Huvikeskus_x0020_Model.RuumRegistreerimine" FromRole="Registreerimine" ToRole="Ruum" />
+        </EntityType>
+        <Association Name="huviringidRegistreerimine">
+          <End Type="Huvikeskus_x0020_Model.huviringid" Role="huviringid" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Registreerimine" Role="Registreerimine" Multiplicity="*" />
+        </Association>
+        <EntityType Name="UritusHuviring">
+          <Key>
+            <PropertyRef Name="Uritus" />
+          </Key>
+          <Property Name="Uritus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Uritus1" Relationship="Huvikeskus_x0020_Model.UritusUritusHuviring" FromRole="UritusHuviring" ToRole="Uritus" />
+          <NavigationProperty Name="huviringid" Relationship="Huvikeskus_x0020_Model.huviringidUritusHuviring" FromRole="UritusHuviring" ToRole="huviringid" />
+        </EntityType>
+        <Association Name="UritusUritusHuviring">
+          <End Type="Huvikeskus_x0020_Model.Uritus" Role="Uritus" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.UritusHuviring" Role="UritusHuviring" Multiplicity="*" />
+        </Association>
+        <Association Name="huviringidUritusHuviring">
+          <End Type="Huvikeskus_x0020_Model.huviringid" Role="huviringid" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.UritusHuviring" Role="UritusHuviring" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Osalemine">
+          <Key>
+            <PropertyRef Name="OsalemineID" />
+          </Key>
+          <Property Name="OsalemineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ToimusAeg" Type="String" Nullable="false" />
+          <Property Name="Kuupaev" Type="String" Nullable="false" />
+          <Property Name="Kohal" Type="String" Nullable="false" />
+          <NavigationProperty Name="Registreerimine" Relationship="Huvikeskus_x0020_Model.RegistreerimineOsalemine" FromRole="Osalemine" ToRole="Registreerimine" />
+        </EntityType>
+        <EntityType Name="Osaleja">
+          <Key>
+            <PropertyRef Name="OsalejaID" />
+          </Key>
+          <Property Name="OsalejaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nimi" Type="String" Nullable="false" />
+          <Property Name="Tel" Type="String" Nullable="false" />
+          <Property Name="Epost" Type="String" Nullable="false" />
+          <NavigationProperty Name="Registreerimine" Relationship="Huvikeskus_x0020_Model.OsalejaRegistreerimine" FromRole="Osaleja" ToRole="Registreerimine" />
+        </EntityType>
+        <Association Name="OsalejaRegistreerimine">
+          <End Type="Huvikeskus_x0020_Model.Osaleja" Role="Osaleja" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Registreerimine" Role="Registreerimine" Multiplicity="*" />
+        </Association>
+        <Association Name="RegistreerimineOsalemine">
+          <End Type="Huvikeskus_x0020_Model.Registreerimine" Role="Registreerimine" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Osalemine" Role="Osalemine" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Arve">
+          <Key>
+            <PropertyRef Name="ArveID" />
+          </Key>
+          <Property Name="ArveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Summa" Type="String" Nullable="false" />
+          <Property Name="Kuupaev" Type="String" Nullable="false" />
+          <Property Name="MakseStatus" Type="String" Nullable="false" />
+          <NavigationProperty Name="Registreerimine" Relationship="Huvikeskus_x0020_Model.RegistreerimineArve" FromRole="Arve" ToRole="Registreerimine" />
+          <NavigationProperty Name="huviringid" Relationship="Huvikeskus_x0020_Model.huviringidArve" FromRole="Arve" ToRole="huviringid" />
+        </EntityType>
+        <Association Name="RegistreerimineArve">
+          <End Type="Huvikeskus_x0020_Model.Registreerimine" Role="Registreerimine" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Arve" Role="Arve" Multiplicity="*" />
+        </Association>
+        <Association Name="huviringidArve">
+          <End Type="Huvikeskus_x0020_Model.huviringid" Role="huviringid" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Arve" Role="Arve" Multiplicity="*" />
+        </Association>
+        <Association Name="RuumRegistreerimine">
+          <End Type="Huvikeskus_x0020_Model.Ruum" Role="Ruum" Multiplicity="1" />
+          <End Type="Huvikeskus_x0020_Model.Registreerimine" Role="Registreerimine" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Huvikeskus_x0020_ModelStoreContainer" CdmEntityContainer="Huvikeskus_x0020_ModelContainer">
+    <EntitySetMapping Name="huviringidSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.huviringid)">
+        <MappingFragment StoreEntitySet="huviringidSet">
+          <ScalarProperty Name="huviringid_id" ColumnName="huviringid_id" />
+          <ScalarProperty Name="nimetus" ColumnName="nimetus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Huviring_juhendajaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.Huviring_juhendaja)">
+        <MappingFragment StoreEntitySet="Huviring_juhendajaSet">
+          <ScalarProperty Name="huviringid_id" ColumnName="huviringid_id" />
+          <ScalarProperty Name="juhendaja_id" ColumnName="juhendaja_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="juhendajaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.juhendaja)">
+        <MappingFragment StoreEntitySet="juhendajaSet">
+          <ScalarProperty Name="juhendaja_id" ColumnName="juhendaja_id" />
+          <ScalarProperty Name="nimi" ColumnName="nimi" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ToimusaegSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.Toimusaeg)">
+        <MappingFragment StoreEntitySet="ToimusaegSet">
+          <ScalarProperty Name="toimusaeg_id" ColumnName="toimusaeg_id" />
+          <ScalarProperty Name="huviringid_id" ColumnName="huviringid_id" />
+          <ScalarProperty Name="paev" ColumnName="paev" />
+          <ScalarProperty Name="alguspaev" ColumnName="alguspaev" />
+          <ScalarProperty Name="loppaeg" ColumnName="loppaeg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuumSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.Ruum)">
+        <MappingFragment StoreEntitySet="RuumSet">
+          <ScalarProperty Name="RuumID" ColumnName="RuumID" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Nimetus" ColumnName="Nimetus" />
+          <ScalarProperty Name="KohtadeArv" ColumnName="KohtadeArv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuhmSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.Ruhm)">
+        <MappingFragment StoreEntitySet="RuhmSet">
+          <ScalarProperty Name="RuhmID" ColumnName="RuhmID" />
+          <ScalarProperty Name="Nimi" ColumnName="Nimi" />
+          <ScalarProperty Name="Vanus" ColumnName="Vanus" />
+          <ScalarProperty Name="Maks_Osalejate" ColumnName="Maks_Osalejate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UritusSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.Uritus)">
+        <MappingFragment StoreEntitySet="UritusSet">
+          <ScalarProperty Name="UritusID" ColumnName="UritusID" />
+          <ScalarProperty Name="Kirjeldus" ColumnName="Kirjeldus" />
+          <ScalarProperty Name="Kuupaev" ColumnName="Kuupaev" />
+          <ScalarProperty Name="ToimusAeg" ColumnName="ToimusAeg" />
+          <ScalarProperty Name="Nimetus" ColumnName="Nimetus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistreerimineSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.Registreerimine)">
+        <MappingFragment StoreEntitySet="RegistreerimineSet">
+          <ScalarProperty Name="RegistreerimineID" ColumnName="RegistreerimineID" />
+          <ScalarProperty Name="Alguskuupaev" ColumnName="Alguskuupaev" />
+          <ScalarProperty Name="LoppPaev" ColumnName="LoppPaev" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UritusHuviringSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.UritusHuviring)">
+        <MappingFragment StoreEntitySet="UritusHuviringSet">
+          <ScalarProperty Name="Uritus" ColumnName="Uritus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OsalemineSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.Osalemine)">
+        <MappingFragment StoreEntitySet="OsalemineSet">
+          <ScalarProperty Name="OsalemineID" ColumnName="OsalemineID" />
+          <ScalarProperty Name="ToimusAeg" ColumnName="ToimusAeg" />
+          <ScalarProperty Name="Kuupaev" ColumnName="Kuupaev" />
+          <ScalarProperty Name="Kohal" ColumnName="Kohal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OsalejaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.Osaleja)">
+        <MappingFragment StoreEntitySet="OsalejaSet">
+          <ScalarProperty Name="OsalejaID" ColumnName="OsalejaID" />
+          <ScalarProperty Name="Nimi" ColumnName="Nimi" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Epost" ColumnName="Epost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArveSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Huvikeskus_x0020_Model.Arve)">
+        <MappingFragment StoreEntitySet="ArveSet">
+          <ScalarProperty Name="ArveID" ColumnName="ArveID" />
+          <ScalarProperty Name="Summa" ColumnName="Summa" />
+          <ScalarProperty Name="Kuupaev" ColumnName="Kuupaev" />
+          <ScalarProperty Name="MakseStatus" ColumnName="MakseStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="huviringidHuviring_juhendaja" TypeName="Huvikeskus_x0020_Model.huviringidHuviring_juhendaja" StoreEntitySet="Huviring_juhendajaSet">
+      <EndProperty Name="huviringid">
+        <ScalarProperty Name="huviringid_id" ColumnName="huviringid_huviringid_id" />
+      </EndProperty>
+      <EndProperty Name="Huviring_juhendaja">
+        <ScalarProperty Name="huviringid_id" ColumnName="huviringid_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="juhendajaHuviring_juhendaja" TypeName="Huvikeskus_x0020_Model.juhendajaHuviring_juhendaja" StoreEntitySet="Huviring_juhendajaSet">
+      <EndProperty Name="juhendaja">
+        <ScalarProperty Name="juhendaja_id" ColumnName="juhendaja_juhendaja_id" />
+      </EndProperty>
+      <EndProperty Name="Huviring_juhendaja">
+        <ScalarProperty Name="huviringid_id" ColumnName="huviringid_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RuumToimusaeg" TypeName="Huvikeskus_x0020_Model.RuumToimusaeg" StoreEntitySet="ToimusaegSet">
+      <EndProperty Name="Ruum">
+        <ScalarProperty Name="RuumID" ColumnName="Ruum_RuumID" />
+      </EndProperty>
+      <EndProperty Name="Toimusaeg">
+        <ScalarProperty Name="toimusaeg_id" ColumnName="toimusaeg_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RuhmToimusaeg" TypeName="Huvikeskus_x0020_Model.RuhmToimusaeg" StoreEntitySet="ToimusaegSet">
+      <EndProperty Name="Ruhm">
+        <ScalarProperty Name="RuhmID" ColumnName="Ruhm_RuhmID" />
+      </EndProperty>
+      <EndProperty Name="Toimusaeg">
+        <ScalarProperty Name="toimusaeg_id" ColumnName="toimusaeg_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="huviringidRuhm" TypeName="Huvikeskus_x0020_Model.huviringidRuhm" StoreEntitySet="RuhmSet">
+      <EndProperty Name="huviringid">
+        <ScalarProperty Name="huviringid_id" ColumnName="huviringid_huviringid_id" />
+      </EndProperty>
+      <EndProperty Name="Ruhm">
+        <ScalarProperty Name="RuhmID" ColumnName="RuhmID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="huviringidRegistreerimine" TypeName="Huvikeskus_x0020_Model.huviringidRegistreerimine" StoreEntitySet="RegistreerimineSet">
+      <EndProperty Name="huviringid">
+        <ScalarProperty Name="huviringid_id" ColumnName="huviringid_huviringid_id" />
+      </EndProperty>
+      <EndProperty Name="Registreerimine">
+        <ScalarProperty Name="RegistreerimineID" ColumnName="RegistreerimineID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UritusUritusHuviring" TypeName="Huvikeskus_x0020_Model.UritusUritusHuviring" StoreEntitySet="UritusHuviringSet">
+      <EndProperty Name="Uritus">
+        <ScalarProperty Name="UritusID" ColumnName="Uritus1_UritusID" />
+      </EndProperty>
+      <EndProperty Name="UritusHuviring">
+        <ScalarProperty Name="Uritus" ColumnName="Uritus" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="huviringidUritusHuviring" TypeName="Huvikeskus_x0020_Model.huviringidUritusHuviring" StoreEntitySet="UritusHuviringSet">
+      <EndProperty Name="huviringid">
+        <ScalarProperty Name="huviringid_id" ColumnName="huviringid_huviringid_id" />
+      </EndProperty>
+      <EndProperty Name="UritusHuviring">
+        <ScalarProperty Name="Uritus" ColumnName="Uritus" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OsalejaRegistreerimine" TypeName="Huvikeskus_x0020_Model.OsalejaRegistreerimine" StoreEntitySet="RegistreerimineSet">
+      <EndProperty Name="Osaleja">
+        <ScalarProperty Name="OsalejaID" ColumnName="Osaleja_OsalejaID" />
+      </EndProperty>
+      <EndProperty Name="Registreerimine">
+        <ScalarProperty Name="RegistreerimineID" ColumnName="RegistreerimineID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RegistreerimineOsalemine" TypeName="Huvikeskus_x0020_Model.RegistreerimineOsalemine" StoreEntitySet="OsalemineSet">
+      <EndProperty Name="Registreerimine">
+        <ScalarProperty Name="RegistreerimineID" ColumnName="Registreerimine_RegistreerimineID" />
+      </EndProperty>
+      <EndProperty Name="Osalemine">
+        <ScalarProperty Name="OsalemineID" ColumnName="OsalemineID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RegistreerimineArve" TypeName="Huvikeskus_x0020_Model.RegistreerimineArve" StoreEntitySet="ArveSet">
+      <EndProperty Name="Registreerimine">
+        <ScalarProperty Name="RegistreerimineID" ColumnName="Registreerimine_RegistreerimineID" />
+      </EndProperty>
+      <EndProperty Name="Arve">
+        <ScalarProperty Name="ArveID" ColumnName="ArveID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="huviringidArve" TypeName="Huvikeskus_x0020_Model.huviringidArve" StoreEntitySet="ArveSet">
+      <EndProperty Name="huviringid">
+        <ScalarProperty Name="huviringid_id" ColumnName="huviringid_huviringid_id" />
+      </EndProperty>
+      <EndProperty Name="Arve">
+        <ScalarProperty Name="ArveID" ColumnName="ArveID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
