@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f5ccec08223244a28f6d0dbeb31dd281" Name="Diagram1" ZoomLevel="73" >
+      <Diagram DiagramId="f5ccec08223244a28f6d0dbeb31dd281" Name="Diagram1" ZoomLevel="125" >
         <EntityTypeShape EntityType="Huvikeskus_x0020_Model.huviringid" Width="1.5" PointX="1.375" PointY="6.375" />
         <EntityTypeShape EntityType="Huvikeskus_x0020_Model.Huviring_juhendaja" Width="1.75" PointX="4.25" PointY="9.375" />
         <EntityTypeShape EntityType="Huvikeskus_x0020_Model.juhendaja" Width="1.5" PointX="4.5" PointY="6.5" />

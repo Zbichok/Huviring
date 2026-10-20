@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/08/2026 12:52:33
--- Generated from EDMX file: C:\Users\opilane\source\repos\ERD\ERD\Huvikeskus Model.edmx
+-- Date Created: 10/20/2026 08:51:48
+-- Generated from EDMX file: C:\Users\opilane\source\repos\Zbichok\Huviring\ERD\Huvikeskus Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [Huviringtest2];
+USE [huviring];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -173,8 +173,8 @@ CREATE TABLE [dbo].[RegistreerimineSet] (
     [Alguskuupaev] nvarchar(max)  NOT NULL,
     [LoppPaev] nvarchar(max)  NOT NULL,
     [huviringid_huviringid_id] int  NOT NULL,
-    [Ruhm_RuhmID] int  NOT NULL,
-    [Osaleja_OsalejaID] int  NOT NULL
+    [Osaleja_OsalejaID] int  NOT NULL,
+    [Ruum_RuumID] int  NOT NULL
 );
 GO
 
@@ -386,21 +386,6 @@ ON [dbo].[RegistreerimineSet]
     ([huviringid_huviringid_id]);
 GO
 
--- Creating foreign key on [Ruhm_RuhmID] in table 'RegistreerimineSet'
-ALTER TABLE [dbo].[RegistreerimineSet]
-ADD CONSTRAINT [FK_RuhmRegistreerimine]
-    FOREIGN KEY ([Ruhm_RuhmID])
-    REFERENCES [dbo].[RuhmSet]
-        ([RuhmID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_RuhmRegistreerimine'
-CREATE INDEX [IX_FK_RuhmRegistreerimine]
-ON [dbo].[RegistreerimineSet]
-    ([Ruhm_RuhmID]);
-GO
-
 -- Creating foreign key on [Uritus1_UritusID] in table 'UritusHuviringSet'
 ALTER TABLE [dbo].[UritusHuviringSet]
 ADD CONSTRAINT [FK_UritusUritusHuviring]
@@ -489,6 +474,21 @@ GO
 CREATE INDEX [IX_FK_huviringidArve]
 ON [dbo].[ArveSet]
     ([huviringid_huviringid_id]);
+GO
+
+-- Creating foreign key on [Ruum_RuumID] in table 'RegistreerimineSet'
+ALTER TABLE [dbo].[RegistreerimineSet]
+ADD CONSTRAINT [FK_RuumRegistreerimine]
+    FOREIGN KEY ([Ruum_RuumID])
+    REFERENCES [dbo].[RuumSet]
+        ([RuumID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_RuumRegistreerimine'
+CREATE INDEX [IX_FK_RuumRegistreerimine]
+ON [dbo].[RegistreerimineSet]
+    ([Ruum_RuumID]);
 GO
 
 -- --------------------------------------------------
